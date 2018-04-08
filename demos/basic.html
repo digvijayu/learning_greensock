@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Basic animations</title>
+</head>
+
+<body>
+  <style>
+    .example {
+      text-align: center;
+      padding: 40px;
+      border: 1px solid gray;
+      margin: 40px 0;
+    }
+
+    .example .animation-target {
+      margin: 20px 0;
+      font-size: 32px;
+    }
+
+    button {
+      color: #555;
+      background: #aaa;
+      font-weight: bold;
+      border: 1px solid #555;
+      cursor: pointer;
+    }
+
+    button:hover {
+      color: #FFF;
+      background: #222;
+    }
+  </style>
+
+  <script src="./../node_modules/gsap/TweenMax.js"></script>
+  <script src="./../node_modules/gsap/TimelineMax.js"></script>
+
+  <div class="example1 example" style="text-align:center;">
+    <div class="animation-target">Make this text bigger</div>
+    <button class="animation-button" onClick="example1()">Animate</div>
+  </div>
+
+  <div class="example2 example" style="text-align:center; height: 100px;">
+    <div class="animation-target" style="position:absolute; background-image: url('./../assets/images/sonic.png'); background-size: contain; height: 100px; width: 100px;"></div>
+    <button class="animation-button" onClick="example2()">Animate</div>
+  </div>
+
+
+  <script>
+    window.example1 = function(){
+      console.log('example 1');
+      TweenMax.to('.example1 .animation-target', 1, {scale : 2});
+    }
+
+    window.example2 = function(){
+      console.log('example 2');
+      TweenMax.to('.example2 .animation-target', 1, {rotation: "+=360", repeat:0, ease: Linear.easeNone, transformOrigin:"50% 50%", left: "50%" });
+    }
+  </script>
+
+</body>
+
+</html>
